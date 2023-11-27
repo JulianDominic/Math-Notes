@@ -1,0 +1,68 @@
+\documentclass[../Latex-Setup/setup.tex]{subfiles}
+\graphicspath{{./images}}
+
+\begin{document}
+\title{Sets}
+\author{Julian Dominic}
+\date{\today}
+\maketitle
+
+\section{Introduction to Sets}
+
+\indent A \textbf{set} is a collection of things. We call these things \textbf{elements}.
+In Mathematics, we denote a set by writing elements inside curly brackets $\{a,b,c,d,\dots\}$.
+For example, if we want a set to contain $2,4,6,8$ exactly, we can write it as $\{2,4,6,8\}$.
+A set has either a \textbf{finite} or \textbf{infinite} amount of elements.
+For example, we can have the set of all even integers:
+
+\[\{\dots,-4,-2,0,2,4,\dots\}\]
+the ellipsis (dots) here indicates that there are more elements, and since they are indicated at the 'ends' of the sets,
+we can say that numbers continues forever in both the negative and positive directions.\par
+
+\indent Two sets are equal if they contain the \textbf{exact same elements regardless of their order}.
+
+\[ \{1,2,3\} = \{3,1,2\} \]
+\par
+
+\indent We often let uppercase letters stand for sets. Lets say we have a set $A = \{2,4,6,8\}$, we can have some statements:
+
+\begin{itemize}
+    \item $2 \in A$: $2$ is an element of $A$; $2$ is in $A$; $2$ in $A$.
+    \item $5 \notin A$: $5$ is not an element of $A$.
+    \item $2,4,6,8 \in A$: $2,4,6,8$ are in $A$ -- this is how we can indicate that there are several things in a set.
+\end{itemize}
+\par
+
+\indent \textbf{Cardinality} is how we can measure the size of the sets which is the number of elements in a set. 
+For now, we will only concern ourselves where the sets are finite. If $X$ is a finite set, the cardinality of $X$ is $|X|$.\par
+
+\indent There is a special set called the \textbf{empty set}, represented as $\emptyset$ or $\{\}$.
+By its name, an empty set has no elements, thus, the cardinality $|\emptyset| = 0$. The empty set is the only set whose cardinality is zero.
+We can think of a set as a ``box''. By this definition, the empty set is just an empty box. But what about $\{\emptyset\}$?
+It is a box that contains an empty box, so we can say its cardinality $|\{\emptyset\}| = 1$.\par
+
+\indent In Mathematics, we will often the \textbf{set-builder notation} or some variant of it.
+It is used to describe sets that are either too big, too complex or hard to list in standard $\{\}$ notation.
+
+\[X = \{\text{expression}:\text{rule}\} \text{ or } \{\text{expression}|\text{rule}\}\]
+this can be read as $X$ is the set of all things (elements) of the form ``expression'' such that ``rule''.
+There can be many ways to express the same set. If we want to express the set of all even integers:
+\begin{align*}
+    E &= \{2n: n \in \mathbb{Z}\} \\
+    &= \{n: n \text{ is an even integer}\} \\
+    &= \{n: n=2k,k \in \mathbb{Z}\} \\
+    &= \{n \in \mathbb{Z} : n \text{ is even}\}
+\end{align*}
+\par
+
+
+\section{The Cartesian Product}
+\section{Subsets}
+\section{Power Sets}
+\section{Union, Intersection, Difference}
+\section{Complement}
+\section{Venn Diagrams}
+\section{Indexed Sets}
+\section{Sets That Are Number Systems}
+\section{Russell's Paradox}
+\end{document}

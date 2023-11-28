@@ -1,5 +1,22 @@
 \documentclass[../Latex-Setup/setup.tex]{subfiles}
 \graphicspath{{./images}}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{bgcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{code}{
+    backgroundcolor=\color{bgcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numbers=none,
+    %numberstyle=\tiny\color{codegray},
+    basicstyle=\ttfamily\footnotesize,
+    identifierstyle=\color{black},
+    frame=L
+}
+\lstset{style=code}
 
 \begin{document}
 \title{Sets}
@@ -16,7 +33,7 @@ A set has either a \textbf{finite} or \textbf{infinite} amount of elements.
 For example, we can have the set of all even integers:
 
 \[\{\dots,-4,-2,0,2,4,\dots\}\]
-the ellipsis (dots) here indicates that there are more elements, and since they are indicated at the 'ends' of the sets,
+the ellipsis (dots) here indicates that there are more elements, and since they are indicated at the `ends' of the sets,
 we can say that numbers continues forever in both the negative and positive directions.\par
 
 \indent Two sets are equal if they contain the \textbf{exact same elements regardless of their order}.
@@ -48,15 +65,90 @@ It is used to describe sets that are either too big, too complex or hard to list
 this can be read as $X$ is the set of all things (elements) of the form ``expression'' such that ``rule''.
 There can be many ways to express the same set. If we want to express the set of all even integers:
 \begin{align*}
-    E &= \{2n: n \in \mathbb{Z}\} \\
+    E &= \{2n: n \in \ZZ\} \\
     &= \{n: n \text{ is an even integer}\} \\
-    &= \{n: n=2k,k \in \mathbb{Z}\} \\
+    &= \{n: n=2k,k \in \ZZ\} \\
     &= \{n \in \mathbb{Z} : n \text{ is even}\}
 \end{align*}
 \par
 
 
 \section{The Cartesian Product}
+
+The Cartesian product is an operation where we multiply two or more sets together to produce a new set.
+To understand what the elements of this Cartesian product are, we need to know what is an ordered pair.
+An ordered pair is a list $(x,y)$ of two things $x$ and $y$, enclosed in parentheses and separated by a comma.
+As the name implies, while it may look similar to sets, an ordered pair cares about the order of its elements.
+This is to show that we can have two ordered pairs -- $(2,4)$ and $(4,2)$ -- while they have the same elements,
+they are not equal because the order of each element is different.\par
+
+The Cartesian product of two sets $A$ and $B$ can be written as $A \times B$. Note, the new set produced is called $A \times B$.
+When there is a set, there will be its elements (unless it's the empty set):
+
+\[A \times B =\{(a, b) : a \in A, b \in B\}\]
+the elements of the Cartesian product of $A$ and $B$ are ordered pairs of the elements found in $A$ and $B$. For example,
+$A = \{k, l, m\}$ and $B = \{q, r\}$, their Cartesian product $A \times B = \{(k,q), (k,r), (l,q), (l,r), (m,q), (m,r)\}$.
+Do take note of the order of the elements within the ordered pairs, the elements of $A$ come first, followed by the elements of $B$.\par
+
+If $A$ and $B$ are finite sets, $|A \times B| = |A| \cdot |B|$.\par
+
+A quick note for programmers, if you haven't noticed it already, the Cartesian product is very similar to nested ``for'' loops!
+\begin{lstlisting}[language=Python]
+# Two Nested "For" Loops to illustrate the Cartesian Product
+cartesian_product = []
+A = [k,l,m]
+B = [q,r]
+for a in A:
+    for b in B:
+        ordered_pair = (a,b)
+        cartesian_product.append(ordered_pair)
+
+print(cartesian_product)  # [(k,q), (k,r), (l,q), (l,r), (m,q), (m,r)]
+\end{lstlisting}
+\par
+
+It is possible for one factor of a Cartesian product to be a Cartesian itself.
+For example, $\RR \times (\NN \times \ZZ) = \{(x, (y,z)) : x \in \RR, (y,z) \in (\NN \times \ZZ)\}$.\par
+
+So far, we have been seeing Cartesian products between two sets, and we can also have Cartesian products with more than two sets.
+Consider three sets, $\RR, \NN, \ZZ$. We will have a Cartesian product that has ordered triples.
+$\RR \times \NN \times \ZZ = \{(x,y,z) : x \in \RR, y \in \NN, z \in \ZZ\}$.\par
+
+In general, with $n$-sets:
+
+\[A_1 \times A_2 \times \dots \times A_n = \{(x_1,x_2,\dots,x_n) : x_i \in A_i \text{ for each } i = 1,2,\dots,n\}\]
+Do take note of the placement of the parentheses when reading Cartesian products.
+While $\RR \times \NN \times \ZZ$ and $\RR \times (\NN \times \ZZ)$ look the same, they really aren't the same.
+The first Cartesian product is between three sets while the second Cartesian product is between two sets.\par
+
+For any set $A$ and positive integer $n$, the Cartesian Power $A^n$:
+
+\[A^n = \underbrace{A \times A \times \dots \times A}_{n \text{ times}} = \{(x_1,x_2,\dots,x_n) : x_1,x_2,\dots,x_n \in A\}\]
+the Cartesian power is more common than we think. The most common example so far is the case where $n = 1$ but we also see $n = 2$, and $n = 3$.
+In particular, we can think of $\RR^2$ as the Cartesian plane that contains all the real numbers and $ZZ^2$ as a grid of points on the Cartesian plane.
+Physically, we can treat $\RR^2$ as a piece of paper, and $ZZ^2$ are solid dots on the paper.
+We can now draw links to coordinate geometry where we treat points in the forms of ordered pairs.
+In this vein, we can say that $\RR^2$ is the combination of all possible coordinates on a real plane,
+and $\ZZ^2$ is the combination of all coordinates whose elements are all integers.
+For the case of $n = 3$, we can think of $\RR^3$ as the 3D space, and $\ZZ^3$ as a grid of points in the 3D space.\par
+
+Try sketching a few of the Cartesian powers such as $\ZZ^2, \ZZ^3, \NN^2, \NN^3$ to see it for yourself!\par
+
+\begin{figure}[H]
+    \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[scale=0.45]{./images/Z2-in-R2.png}
+    \caption{$\ZZ^2$ in $\RR^2$ (Made in Desmos)}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[scale=0.45]{./images/Z3-in-R3.png}
+        \caption{$\ZZ^3$ in $\RR^3$ (Made in Desmos)}
+    \end{minipage}
+\end{figure}
+
+
+
 \section{Subsets}
 \section{Power Sets}
 \section{Union, Intersection, Difference}

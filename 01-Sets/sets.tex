@@ -75,14 +75,14 @@ There can be many ways to express the same set. If we want to express the set of
 
 \section{The Cartesian Product}
 
-The \textbf{Cartesian product} is an operation where we multiply two or more sets together to produce a new set.
+\indent The \textbf{Cartesian product} is an operation where we multiply two or more sets together to produce a new set.
 To understand what the elements of this Cartesian product are, we need to know what is an ordered pair.
 An \textbf{ordered pair} is a list $(x,y)$ of two things $x$ and $y$, enclosed in parentheses and separated by a comma.
 As the name implies, while it may look similar to sets, an ordered pair cares about the order of its elements.
 This is to show that we can have two ordered pairs -- $(2,4)$ and $(4,2)$ -- while they have the same elements,
 they are not equal because the order of each element is different.\par
 
-The Cartesian product of two sets $A$ and $B$ can be written as $A \times B$. Note, the new set produced is called $A \times B$.
+\indent The Cartesian product of two sets $A$ and $B$ can be written as $A \times B$. Note, the new set produced is called $A \times B$.
 When there is a set, there will be its elements (unless it's the empty set):
 
 \[A \times B =\{(a, b) : a \in A, b \in B\}\]
@@ -90,9 +90,9 @@ the elements of the Cartesian product of $A$ and $B$ are ordered pairs of the el
 $A = \{k, l, m\}$ and $B = \{q, r\}$, their Cartesian product $A \times B = \{(k,q), (k,r), (l,q), (l,r), (m,q), (m,r)\}$.
 Do take note of the order of the elements within the ordered pairs, the elements of $A$ come first, followed by the elements of $B$.\par
 
-If $A$ and $B$ are finite sets, $|A \times B| = |A| \cdot |B|$.\par
+\indent If $A$ and $B$ are finite sets, $|A \times B| = |A| \cdot |B|$.\par
 
-A quick note for programmers, if you haven't noticed it already, the Cartesian product is very similar to nested ``for'' loops!
+\indent A quick note for programmers, if you haven't noticed it already, the Cartesian product is very similar to nested ``for'' loops!
 \begin{lstlisting}[language=Python]
 # Two Nested "For" Loops to illustrate the Cartesian Product
 cartesian_product = []
@@ -107,32 +107,34 @@ print(cartesian_product)  # [(k,q), (k,r), (l,q), (l,r), (m,q), (m,r)]
 \end{lstlisting}
 \par
 
-It is possible for one factor of a Cartesian product to be a Cartesian product too.
+\indent It is possible for one factor of a Cartesian product to be a Cartesian product too.
 For example, $\RR \times (\NN \times \ZZ) = \{(x, (y,z)) : x \in \RR, (y,z) \in (\NN \times \ZZ)\}$.\par
 
-So far, we have been seeing Cartesian products between two sets, and we can also have Cartesian products with more than two sets.
+\indent So far, we have been seeing Cartesian products between two sets, and we can also have Cartesian products with more than two sets.
 Consider three sets, $\RR, \NN, \ZZ$. We will have a Cartesian product that has ordered triples.
 $\RR \times \NN \times \ZZ = \{(x,y,z) : x \in \RR, y \in \NN, z \in \ZZ\}$.\par
 
-In general, with $n$-sets:
+\indent In general, with $n$-sets:
 
 \[A_1 \times A_2 \times \dots \times A_n = \{(x_1,x_2,\dots,x_n) : x_i \in A_i \text{ for each } i = 1,2,\dots,n\}\]
 Do take note of the placement of the parentheses when reading Cartesian products.
 While $\RR \times \NN \times \ZZ$ and $\RR \times (\NN \times \ZZ)$ look the same, they really aren't the same.
 The first Cartesian product is between three sets while the second Cartesian product is between two sets.\par
 
-For any set $A$ and positive integer $n$, the \textbf{Cartesian Power} $A^n$:
+\indent For any set $A$ and positive integer $n$, the \textbf{Cartesian Power} $A^n$:
 
 \[A^n = \underbrace{A \times A \times \dots \times A}_{n \text{ times}} = \{(x_1,x_2,\dots,x_n) : x_1,x_2,\dots,x_n \in A\}\]
-the Cartesian power is more common than we think. The most common example so far is the case where $n = 1$ but we also see $n = 2$, and $n = 3$.
-In particular, we can think of $\RR^2$ as the Cartesian plane that contains all the real numbers and $ZZ^2$ as a grid of points on the Cartesian plane.
-Physically, we can treat $\RR^2$ as a piece of paper, and $ZZ^2$ are solid dots on the paper.
+\par
+
+\indent The Cartesian power is more common than we think. The most common example so far is the case where $n = 1$ but we also see $n = 2$, and $n = 3$.
+In particular, we can think of $\RR^2$ as the Cartesian plane that contains all the real numbers and $\ZZ^2$ as a grid of points on the Cartesian plane.
+Physically, we can treat $\RR^2$ as a piece of paper, and $\ZZ^2$ are solid dots on the paper.
 We can now draw links to coordinate geometry where we treat points in the forms of ordered pairs.
 In this vein, we can say that $\RR^2$ is the combination of all possible coordinates on a real plane,
 and $\ZZ^2$ is the combination of all coordinates whose elements are all integers.
 For the case of $n = 3$, we can think of $\RR^3$ as the 3D space, and $\ZZ^3$ as a grid of points in the 3D space.\par
 
-Try sketching a few of the Cartesian powers such as $\ZZ^2, \ZZ^3, \NN^2, \NN^3$ to see it for yourself!\par
+\indent Try sketching a few of the Cartesian powers such as $\ZZ^2, \ZZ^3, \NN^2, \NN^3$ to see it for yourself!\par
 
 \begin{figure}[H]
     \begin{minipage}{0.45\textwidth}
@@ -148,8 +150,54 @@ Try sketching a few of the Cartesian powers such as $\ZZ^2, \ZZ^3, \NN^2, \NN^3$
 \end{figure}
 
 
-
 \section{Subsets}
+
+\indent There can be cases where all the elements of a set $A$ is also the elements of another set $B$. For example,
+every element in $A = \{a,b,c\}$ is also an element of $B = \{a,b,c,d\}$. When this case arises, we can say that $A$ is a \textbf{subset} of $B$.\par
+
+\indent Suppose $A$ and $B$ are sets. If every element of $A$ is also an element of $B$, then we can say $A$ is a subset of $B$,
+and it can be written as $A \subset B$. If $A$ is not a subset of $B$, it can be written as $A \not\subset B$ -- this means
+that there is at least one element in $A$ that cannot be found in $B$.\par
+
+\indent Here are some statements (\textit{most of them are important}) to take note of:
+\begin{enumerate}
+    \item $A \subseteq A$ for any set $A$
+    \item $\emptyset \subseteq A$ for any set $A$
+    \item $\emptyset \subseteq \emptyset$
+    \item $\emptyset \notin \emptyset$
+    \item $\NN \subset \ZZ \subset \QQ \subset \RR \subset \CC$
+    \item $\RR \times \NN \subset \RR \times \RR$
+    \item If a finite set has $n$ elements, then it has $2^n$ subsets (including $\emptyset$).
+    \item $\NN \in \{\NN\}$
+    \item $\NN \not\subset \{\NN\}$
+\end{enumerate}
+\par
+
+\indent To see why (2) is true, think about the last sentence in the paragraph above. Consider the case where $\emptyset \not\subseteq B$ for any set $B$,
+this will mean that there is at least one element in $\emptyset$ that is not in $B$. However, since $|\emptyset| = 0$, the statement that
+``\textit{there is at least one element in $\emptyset$}'' is wrong, and fully invalidates the whole statement.
+Hence, $\emptyset \not\subseteq B$ is false, so it must be the case that $\emptyset \subseteq B$.\par
+
+\indent Moreover, another approach you can take is through the ``first principles''. When you construct a set, you start with an empty braces $\{\}$,
+and you will fill up the braces with your elements or you can choose to leave it as an empty box. Thus, you are left with the subset $\{\}$,
+which is mainly written as $\emptyset$; implying that $\emptyset \subseteq B$.\par
+
+\indent It may be troubling to see why (9) is true. Go back to the definitions, lets take an element of $\NN$;
+$1 \in \NN$, if $\NN \subset \{\NN\}$, this means that $1 \in \{\NN\}$. However, the only element in $\{\NN\}$ is $\NN$, $|\{\NN\}| = 1$.
+Therefore, $\NN \not\subset \{\NN\}$.\par
+
+\indent Another tricky example can be the following, suppose $B = \{a,b,\{c,d\}\}$. This means that $B$ has only $3$ elements, $a,b$, and $\{c,d\}$.
+While $\{c,d\} \not\subset B$, it is true that $\{c,d\} \in B$. To make $\{c,d\}$ a subset of $B$, it has to be in a set itself -- $\{\{c,d\}\} \subset B$.\par
+
+\begin{remark}
+    Regarding the usage of $\subseteq$ and $\subset$. Suppose $A$ and $B$ are sets:\par
+    \begin{itemize}
+        \item $\subseteq$ is used when there's a possibility that the sets that are being compared, are equal -- $A = B$. This is called the ``improper subset.''
+        \item $\subset$ is used when $|A| < |B|$ and $A \neq B$; all of $A$'s elements can be found in $B$ but the total number of elements is lesser than $B$. This is called the ``proper subset''.
+    \end{itemize}
+\end{remark}
+
+
 \section{Power Sets}
 \section{Union, Intersection, Difference}
 \section{Complement}

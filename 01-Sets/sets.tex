@@ -58,7 +58,7 @@ By its name, an empty set has no elements, thus, the cardinality $|\emptyset| = 
 We can think of a set as a ``box''. By this definition, the empty set is just an empty box. But what about $\{\emptyset\}$?
 It is a box that contains an empty box, so we can say its cardinality $|\{\emptyset\}| = 1$.\par
 
-\indent In Mathematics, we will often the \textbf{set-builder notation} or some variant of it.
+\indent In Mathematics, we will often see/use the \textbf{set-builder notation} or some variant of it.
 It is used to describe sets that are either too big, too complex or hard to list in standard $\{\}$ notation.
 
 \[X = \{\text{expression}:\text{rule}\} \text{ or } \{\text{expression}|\text{rule}\}\]
@@ -75,9 +75,9 @@ There can be many ways to express the same set. If we want to express the set of
 
 \section{The Cartesian Product}
 
-The Cartesian product is an operation where we multiply two or more sets together to produce a new set.
+The \textbf{Cartesian product} is an operation where we multiply two or more sets together to produce a new set.
 To understand what the elements of this Cartesian product are, we need to know what is an ordered pair.
-An ordered pair is a list $(x,y)$ of two things $x$ and $y$, enclosed in parentheses and separated by a comma.
+An \textbf{ordered pair} is a list $(x,y)$ of two things $x$ and $y$, enclosed in parentheses and separated by a comma.
 As the name implies, while it may look similar to sets, an ordered pair cares about the order of its elements.
 This is to show that we can have two ordered pairs -- $(2,4)$ and $(4,2)$ -- while they have the same elements,
 they are not equal because the order of each element is different.\par
@@ -107,7 +107,7 @@ print(cartesian_product)  # [(k,q), (k,r), (l,q), (l,r), (m,q), (m,r)]
 \end{lstlisting}
 \par
 
-It is possible for one factor of a Cartesian product to be a Cartesian itself.
+It is possible for one factor of a Cartesian product to be a Cartesian product too.
 For example, $\RR \times (\NN \times \ZZ) = \{(x, (y,z)) : x \in \RR, (y,z) \in (\NN \times \ZZ)\}$.\par
 
 So far, we have been seeing Cartesian products between two sets, and we can also have Cartesian products with more than two sets.
@@ -121,7 +121,7 @@ Do take note of the placement of the parentheses when reading Cartesian products
 While $\RR \times \NN \times \ZZ$ and $\RR \times (\NN \times \ZZ)$ look the same, they really aren't the same.
 The first Cartesian product is between three sets while the second Cartesian product is between two sets.\par
 
-For any set $A$ and positive integer $n$, the Cartesian Power $A^n$:
+For any set $A$ and positive integer $n$, the \textbf{Cartesian Power} $A^n$:
 
 \[A^n = \underbrace{A \times A \times \dots \times A}_{n \text{ times}} = \{(x_1,x_2,\dots,x_n) : x_1,x_2,\dots,x_n \in A\}\]
 the Cartesian power is more common than we think. The most common example so far is the case where $n = 1$ but we also see $n = 2$, and $n = 3$.

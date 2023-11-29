@@ -199,6 +199,38 @@ While $\{c,d\} \not\subset B$, it is true that $\{c,d\} \in B$. To make $\{c,d\}
 
 
 \section{Power Sets}
+
+\indent If $A$ is a set, the \textbf{Power Set} of $A$ is the set that contains all possible subsets of $A$, written as $\PP(A)$.
+Using the set-builder notation, it can be written as $\PP(A) = \{X : X \subseteq A\}$.\par
+
+\indent One common mistake to take note of is that since the power set is the set that contains all subsets, and subsets are still sets,
+if you ever end up with an element in the power set that is not a set, be sure to double check your work!\par
+
+\indent Following from the previous section, when we said if $|X| = n$, $X$ has $2^n$ subsets,
+it implies that $|\PP(A)| = 2^{|A|}$.\par
+
+\indent There is a way that I have developed on how to keep track of the subsets when writing out the power set:
+\begin{enumerate}
+    \item Write the empty set first, $\emptyset$
+    \item Followed by each individual element contained in their own set, $\{a\}, \{b\}, \dots$
+    \item Followed by the combination of sets that can be formed from each element put together
+    \item Finally, write the set itself because $A \subseteq A$ for any set $A$
+    \item It should look like $\PP(A) = \{\emptyset, \{a\}, \{b\}, \dots, A\}$.
+\end{enumerate}
+\par
+
+\begin{example}
+    Here are some examples to think about:
+    \begin{itemize}
+        \item $\PP(\emptyset)=\{\emptyset\}$
+        \item $\PP(\{a\})=\{\emptyset, \{a\}\}$
+        \item $\PP(\{\emptyset\}) = \{\emptyset, \{\emptyset\}\}$
+        \item $\PP(\PP(\{\emptyset\}))=\{\emptyset, \{\emptyset\}, \{\{\emptyset\}\}, \{\emptyset, \{\emptyset\}\}\}$
+        \item $\PP(\{a\}) \times \PP(\{\emptyset\}) = \{(\emptyset, \emptyset), (\emptyset, \{\emptyset\}), (\{a\}, \emptyset), (\{a\}, \{\emptyset\})\}$
+    \end{itemize}
+\end{example}
+
+
 \section{Union, Intersection, Difference}
 \section{Complement}
 \section{Venn Diagrams}

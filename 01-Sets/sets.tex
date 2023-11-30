@@ -232,6 +232,37 @@ it implies that $|\PP(A)| = 2^{|A|}$.\par
 
 
 \section{Union, Intersection, Difference}
+
+\indent Suppose $A$ and $B$ are sets. The \textbf{union} of $A$ and $B$ is the set of all things that are in $A$ or in $B$ or in both.
+Take note that this is an inclusive ``or''. It can be written as $A \cup B$ which represents $\{x : x \in A \text{ or } x \in B\}$.\par
+
+\[A \cup B = B \cup A\]
+\par
+
+\indent The \textbf{intersection} of $A$ and $B$ is the set of all things that are in both $A$ and $B$.
+It can be written as $A \cap B$ which represents $\{x : x \in A \text{ and } x \in B\}$.\par
+
+\[A \cap B = B \cap A\]
+\par
+
+\indent The \textbf{difference} of $A$ and $B$ is the set of all things that in $A$ but not in $B$.
+It can be written as $A - B$ which represents $\{x : x \in A \text{ and } x \notin B\}$.\par
+
+\[A - B \neq B - A\]
+\par
+
+\begin{example}
+    \indent Here are some examples for you to gain a better understanding of the operations.
+    Suppose $A = \{a,b,c\}$, $B = \{b,c,d\}$, and $C = \{0,1\}$\par
+    \begin{itemize}
+        \item $A \cup B = \{a,b,c,d\}$. Since a set only has unique elements (\textit{elements that appear at most once}), the elements cannot be repeated!
+        \item $A \cap B = \{b,c\}$
+        \item $A - B = \{a\}$
+        \item $A \cap C = \emptyset$
+    \end{itemize}
+\end{example}
+
+
 \section{Complement}
 \section{Venn Diagrams}
 \section{Indexed Sets}

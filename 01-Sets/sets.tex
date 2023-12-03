@@ -278,6 +278,35 @@ It can be written as $A - B$ which represents $\{x : x \in A \text{ and } x \not
 
 
 \section{Complement}
+
+\indent Before we dive into the set operation, called the set complement, we need to introduce the idea of a \textbf{universal set}.
+When dealing with a set, we almost always regard it as a subset of some arbitrarily large set.
+Suppose $P = \{2,3,5,7,\dots\} = \text{ Set of all prime numbers}$. We can say $4,6,,124$ are not in $P$,
+and we can also say ``Julian'' is not in $P$ but it is out of discussion. We have an unstated assumption that $P \subset \NN$.
+Thus, we can say that the larger set $\NN$ is called the universal set or the universe for $P$.\par
+
+\indent In the absence of specific sets, if $A$ is a set, then its universal set is often denoted as $U$.\par
+
+\indent Now, moving onto the ``complement'' operation. Let $A$ be a set with a universal set $U$.
+The \textbf{Complement} of $A$ is denoted as $\overline{A}$, which is the set $\overline{A} = U - A$.
+This means that the complement of $A$ is the set that contains everything that $A$ does not contain within its universe.\par
+
+\indent Do try creating some sets and sketching them out to see the difference between a complement and a non-complement!\par
+
+\begin{figure}[H]
+    \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[scale=0.45]{./images/Set-X.png}
+    \caption{$X=\{(x,y) \in \RR^2 : 1 \leq x^2 + y^2 \leq 4\}$ (Made in Desmos)}
+    \end{minipage}\hfill
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[scale=0.45]{./images/Set-X-Complement.png}
+        \caption{$\overline{X} = \{(x,y) \in \RR^2 : x^2 + y^2 < 1 \text{ or } x^2 + y^2 > 4\}$ (Made in Desmos)}
+    \end{minipage}
+\end{figure}
+\par
+
 \section{Venn Diagrams}
 \section{Indexed Sets}
 \section{Sets That Are Number Systems}
